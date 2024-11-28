@@ -7,7 +7,6 @@ function App() {
   
   <div class="main-container">
     <div class="header">
-      <img src="logo.png" alt="Logo del sitio" class="logo" />
       <h1>El Beso del Búho</h1>
     </div>
 
