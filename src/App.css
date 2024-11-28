@@ -5,16 +5,23 @@
 }
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #242333;
+  background-image: url('fondo.jpg');
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 10px;
+}
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 .movie-container {
   margin: 20px 0;
+  text-align: center;
 }
 .movie-container select {
   background-color: #fff;
@@ -61,19 +68,21 @@ body {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .showcase li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 5px;
 }
 .showcase li small {
   margin-left: 2px;
 }
 .row {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 }
 .screen {
@@ -87,6 +96,8 @@ body {
 .container {
   perspective: 1000px;
   margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px; 
 }
 p.text {
   margin: 5px 0;
@@ -99,11 +110,8 @@ p.text span {
   display: flex;
   align-items: center;
   padding: 10px;
-}
-.logo {
-  width: 50px;
-  height: auto;
-  margin-right: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .footer {
   padding: 20px;
@@ -112,4 +120,55 @@ p.text span {
   color: #333;
   background-color: rgba(255, 255, 255, 0.8);
   border-top: 1px solid #ddd;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .movie-container select {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .seat {
+    height: 10px;
+    width: 12px;
+  }
+
+  .screen {
+    height: 50px;
+  }
+
+  .showcase {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-container select {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .footer {
+    font-size: 0.8em;
+  }
+
+  .seat {
+    margin: 2px;
+  }
 }
