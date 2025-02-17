@@ -1,11 +1,14 @@
-FROM node:16  
+FROM vm/image  # Usa una máquina virtual base de Webapp.io
 
-WORKDIR /app 
+WORKDIR /app  # Define el directorio de trabajo
 
-COPY . .  
+COPY . .  # Copia los archivos del repositorio
 
-RUN npm install  
+RUN bash -c "curl -fsSL https://deb.nodesource.com/setup_16.x | bash -"  # Agrega el repositorio de Node.js 16  
+RUN apt-get install -y nodejs  # Instala Node.js  
 
-RUN npm run build 
+RUN npm install  # Instala dependencias  
 
-RUN webapp.io preview  
+RUN npm run build  # Construye la app  
+
+RUN webapp.io preview  # Genera una vista previa
