@@ -1,0 +1,13 @@
+FROM node:16  # Usa Node.js 16 como base
+
+WORKDIR /app  # Define el directorio de trabajo
+
+COPY . .  # Copia todos los archivos al contenedor
+
+RUN npm install  # Instala las dependencias
+
+RUN npm run build  # Construye la aplicación
+
+RUN webapp.io preview  # Genera una vista previa en Webapp.io
+
+EXPOSE 3000  # Expone el puerto 3000 para desarrollo
